@@ -1,0 +1,40 @@
+log4gm 
+- provides console global object used for logging if its not available (it won't do a thing, then, though).
+- binds console from unsafeWindow (e.g. firebug's console) to Greasemonkey's context
+- provides a log4j-styled logging level differenciation (you can set log level and ignore messages below certain severity).
+
+Please not that log4gm does not provide direct access to wrapped console object - only the limited set of methods listed below.
+
+  /**
+   * Sets log level property (default: INFO)
+   * @param {String} level logging level: DEBUG / INFO / WARN / ERROR / LOG
+   */
+  setLoggingLevel
+  
+  /**
+   * Always log into console
+   * @param [...] Zero or more arguments.
+   */
+    log,
+    
+    /**
+   * Log arguments into console unless severity is set to LOG (lowest)
+   * @param [...] Zero or more arguments.
+   */
+    error,
+    
+    /**
+   * Log arguments into console if severity is set to DEBUG (highest) or INFO (second-highest) or WARN
+   * @param [...] Zero or more arguments.
+   */
+    warn,
+    /**
+   * Log arguments into console if severity is set to DEBUG (highest) or INFO (second-highest)
+   * @param [...] Zero or more arguments.
+   */
+    info,
+    /**
+   * Log arguments into console if severity is set to DEBUG (highest)
+   * @param [...] Zero or more arguments.
+   */
+    debug
