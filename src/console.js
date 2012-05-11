@@ -20,6 +20,7 @@
     },
     /**
      * Always log into console
+     * @param [...] Zero or more arguments.
      */
     log: function () {
       if (unsafeWindow.console)
@@ -29,6 +30,7 @@
     },
     /**
      * Log arguments into console unless severity is set to LOG (lowest)
+     * @param [...] Zero or more arguments.
      */
     error: function () {
       if (unsafeWindow.console && ['DEBUG', 'INFO', 'WARN', 'ERROR'].indexOf(window.console.level) !== -1)
@@ -38,6 +40,7 @@
     },
     /**
      * Log arguments into console if severity is set to DEBUG (highest) or INFO (second-highest) or WARN
+     * @param [...] Zero or more arguments.
      */
     warn: function () {
       if (unsafeWindow.console && ['DEBUG', 'INFO', 'WARN'].indexOf(window.console.level) !== -1)
@@ -47,6 +50,7 @@
     },
     /**
      * Log arguments into console if severity is set to DEBUG (highest) or INFO (second-highest)
+     * @param [...] Zero or more arguments.
      */
     info: function () {
       if (unsafeWindow.console && ['DEBUG', 'INFO'].indexOf(window.console.level) !== -1)
@@ -56,6 +60,7 @@
     },
     /**
      * Log arguments into console if severity is set to DEBUG (highest)
+     * @param [...] Zero or more arguments.
      */
     debug: function () {
       if (unsafeWindow.console && ['DEBUG'].indexOf(window.console.level) !== -1)
